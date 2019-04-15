@@ -9,8 +9,8 @@
         wins: 0,
         losses: 0,
         initGame: function() {
-            this.userLoses(false);
-            this.userWins(false);
+            this.refreshUserLoses(false);
+            this.refreshUserWins(false);
             this.newGameSetUp();
         },
         newGameSetUp: function() {
@@ -36,15 +36,15 @@
             });
         },
 
-        userLoses: function(doIncrement) {
-            if (doIncrement) {
+        refreshUserLoses: function(didUserLose) {
+            if (didUserLose) {
                 this.losses++;
                 alert("you lost!");
             }
-            $(".number-of-losses").text("Loses: " + this.losses);
+            $(".number-of-losses").text("Losses: " + this.losses);
         },
-        userWins: function(doIncrement) {
-            if (doIncrement) {
+        refreshUserWins: function(didUserWin) {
+            if (didUserWin) {
                 this.wins++;
                 alert("you won!");
             }
@@ -74,11 +74,11 @@
             $(".total-score").text(myGame.totalScore);
             if (myGame.totalScore === myGame.scoreToBeat) {
                 // a win
-                myGame.userWins(true);
+                myGame.refreshUserWins(true);
                 myGame.newGameSetUp();
             } else if (myGame.totalScore > myGame.scoreToBeat) {
                 // a loss
-                myGame.userLoses(true);
+                myGame.refreshUserLoses(true);
                 myGame.newGameSetUp();
             } else {
                 myGame.userContinues();

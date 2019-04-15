@@ -8,12 +8,19 @@
 </head>
 <body>
     <h1>Crystal Collector Game</h1>
+    <p class="game-directions">You will be given a random number at the start of the game
+    <br><br>There are four crystals below. A click on any crystal will add a specific amount of points to your total score.
+    <br><br>You win the game by matching your total to the random number. You lose the game if your total score exceeds the random number.
+    <br><br>The value of each crystal is hidden from you until you click on it.
+    <br><br>Each time the game starts, there will be a new random number and new values for each crystal.
+    </p>
     <h2 class="score-to-beat"></h2>
-    <p class="number-of-wins">wins</p>
-    <p class="number-of-losses">losses</p>
+    <div class="current-wins-losses">
+      <div class="number-of-wins">wins</div>
+      <div class="number-of-losses">losses</div>
+    </div>
   <div id="crystals">
 
-    <!-- <img class="crystal-image" id="crystal-1" src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg" alt="crystals"> -->
     <img class="crystal-image" id="crystal-1" value="0" src="assets/images/crystal-blue-diamond.jpg" alt="crystals">
     <img class="crystal-image" id="crystal-2" value="1" src="assets/images/gems-gold.jpg" alt="crystals">
     <img class="crystal-image" id="crystal-3" value="2" src="assets/images/cartoon-crystal.jpg" alt="crystals">
@@ -21,13 +28,11 @@
 
   </div>
 
-  <h2>your total score is: </h2>
+  <h2 class="current-score">your total score is: </h2>
   <p class="total-score"></p>
   <!-- JAVASCRIPT  -->
   <!-- ========================================= -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
 
   <script type="text/javascript" src="assets/javascript/game.js"></script>
   </script>
